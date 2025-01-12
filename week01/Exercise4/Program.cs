@@ -19,7 +19,7 @@ class Program
 
         while (number != "0")
         {
-            Console.WriteLine("Enter number: ");
+            Console.Write("Enter number (0 to quit): ");
             string strNumber = Console.ReadLine();
             number = strNumber;
             
@@ -39,10 +39,8 @@ class Program
         float average = totalSum / floatNumbers.Count();
         int largestNum = intNumbers.Max();
 
-        Console.WriteLine(totalSum);
-        Console.WriteLine(average);
-        Console.WriteLine(largestNum);
-
-
+        Console.WriteLine($"The total sum is: {totalSum}");
+        Console.WriteLine($"The average is: {average}");
+        Console.WriteLine($"The largest number is: {largestNum}");
     }
 }
