@@ -9,7 +9,6 @@ public class PromptGenerator
     
     public void GetRandomPrompt()
     {
-        
         Console.WriteLine(randomPrompt);
     }
 }
