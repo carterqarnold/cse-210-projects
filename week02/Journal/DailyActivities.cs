@@ -26,9 +26,6 @@ public class DailyActivities
         foreach (string line in lines)
         {
             string[] parts = line.Split(",");
-            // string date = parts[0]
-            // string _the = parts[1]
-            // string 
             Console.WriteLine(parts);
         }
     }
