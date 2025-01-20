@@ -26,10 +26,10 @@ class Program
             {                
                 Entry entrys = new Entry();
                 PromptGenerator randPrompt = new PromptGenerator();
-                string thePrompt = randPrompt.GetRandomPrompt();
+                string promptQuestion = randPrompt.GetRandomPrompt();
                 entrys._entry = Console.ReadLine();
                 entrys._date = "11/3/25";
-                entrys._prompt = thePrompt;
+                entrys._prompt = promptQuestion;
             }
 
             else if (response == "2")
