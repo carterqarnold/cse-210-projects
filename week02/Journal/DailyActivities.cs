@@ -10,7 +10,9 @@ public class DailyActivities
 
     public void DisplayAll()
     {
-        Console.WriteLine(_entrys);
+        foreach (string _entry in _entrys){
+            Console.WriteLine(_entry);
+        }
     }
 
     public void SaveToFile(string file)
@@ -26,7 +28,9 @@ public class DailyActivities
         foreach (string line in lines)
         {
             string[] parts = line.Split(",");
-            Console.WriteLine(parts);
+            foreach (string part in parts){
+                Console.WriteLine(part);
+            }
         }
     }
 }
