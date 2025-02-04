@@ -1,26 +1,29 @@
 using System;
 using System.Dynamic;
 
-public class Scripture{
-    public Reference reference1;
-    private List<Word> _words = new List<Word>();
-    public Scripture(Reference reference, string text){
-    reference1 = reference;
-    _words = text.Split(' ').Select(word => new Word(word)).ToList();        }
-    public void HideRandomWords(int numberToHide){
-        int count = 0;
-        while (count != numberToHide){
-            Random random = new Random();
-            int index = random.Next(_words.Count);
-            _words[index]._isHidden  = true;
-            count = count + 1;
-        }
+class Scripture
+{
+    public Reference Reference { get; set; }
+    private List<Word> Words { get; set; }
+
+    public Scripture(Reference reference, string text)
+    {
+        Reference = reference;
+        Words = text.Split(' ').Select(word => new Word(word)).ToList();
+    }
+
+    public string GetDisplayText()
+    {
+        return string.Join(" ", Words.Select(word => word.IsHidden ? new string('_', word.showText().Length) : word.showText()));
+    }
+
+    public void HideRandomWord()
+    {
         
-    }
-    public string GetDisplayText(){
-        return $"{reference1} \n {_words}";
-    }
-    public bool IsCompletelyHidden(){
-        return true;
+        Random random = new Random();
+        int index = random.Next(Words.Count);
+        Words[index].IsHidden = true;
+        
+        
     }
 }

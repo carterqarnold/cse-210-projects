@@ -1,32 +1,36 @@
 using System;
+class Reference
+{
+    private string Book { get; set; }
+    private int Chapter { get; set; }
+    private int VerseStart { get; set; }
+    private int VerseEnd { get; set; } 
 
-    public class Reference{
-        private string _book;
-        private int _chapter;
-        private int _verse;
-        private int _endVerse;
-        public Reference(string book, int chapter, int verse)
-        {
-            _book = book;
-            _chapter = chapter;
-            _verse = verse;
-            _endVerse = verse;
+    public Reference(string book, int chapter, int verse)
+    {
+        Book = book;
+        Chapter = chapter;
+        VerseStart = verse;
+        VerseEnd = verse;
+    }
 
-        }
-        public Reference(string book, int chapter, int startVerse, int endVerse)
+    public Reference(string book, int chapter, int verseStart, int verseEnd)
+    {
+        Book = book;
+        Chapter = chapter;
+        VerseStart = verseStart;
+        VerseEnd = verseEnd;
+    }
+
+    public override string ToString()
+    {
+        if (VerseStart == VerseEnd)
         {
-            _book = book;
-            _chapter = chapter;
-            _verse = startVerse;
-            _endVerse = endVerse;
+            return $"{Book} {Chapter}:{VerseStart}";
         }
-        public string GetDisplayText()
+        else
         {
-            if (_verse == _endVerse){
-                return $"{_book} {_chapter} {_verse}";
-            }
-            else{
-                return $"{_book} {_chapter} {_verse}-{_endVerse}";
-            }
+            return $"{Book} {Chapter}:{VerseStart}-{VerseEnd}";
         }
     }
+}

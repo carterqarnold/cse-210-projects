@@ -1,24 +1,16 @@
 using System;
 using System.Dynamic;
+class Word
+{
+    private string Text { get; set; }
+    public bool IsHidden { get; set; }
 
-public class Word{
-    private string _text;
-    public bool _isHidden{get; set; }
-    public Word(string text){
-        _text = text;
+    public Word(string text)
+    {
+        Text = text;
+        IsHidden = false;
     }
-
-
-    public void Hide(){
-
+    public string showText(){
+        return Text;
     }
-    public void Show(){
-
-    }
-    public bool IsHidden(){
-        return _isHidden;
-    }
-        public string GetDisplayText(){
-            return _text;
-        }
 }
