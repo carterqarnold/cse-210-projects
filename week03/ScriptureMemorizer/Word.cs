@@ -3,10 +3,12 @@ using System.Dynamic;
 
 public class Word{
     private string _text;
-    private bool _isHidden;
+    public bool _isHidden{get; set; }
     public Word(string text){
         _text = text;
     }
+
+
     public void Hide(){
 
     }
